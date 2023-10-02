@@ -20,8 +20,12 @@
       body.appendChild(h3);
       h3.style.fontSize = "2rem";
       let firstP = document.createElement("p");
-      firstP.innerText = "You are inside my site now! I OWN YOU";
+      firstP.innerText = "You are inside my site now!";
       body.appendChild(firstP);
+      let ownYou = document.createElement("b");
+      ownYou.innerText = " I OWN YOU NOW";
+      ownYou.style.color = "aqua";
+      firstP.appendChild(ownYou);
       body.style.fontSize = "1.5rem";
       let secondP = document.createElement("p");
       secondP.innerText = "GOOD LUCK ESCAPING";
