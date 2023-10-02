@@ -38,7 +38,7 @@ const users = [
         ol.append(li)
     })
 
-    const body = document.body;
+    const body = document.querySelector('body');
     body.appendChild(ol)
 
 //remove the numbers from the list
