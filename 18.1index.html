@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width,
+initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Header</h1>
+    <p>Paragraph</p>
+    <a href="#">link</a>
+    <img src="" alt="" />
+    <div class="x">Div with a class</div>
+    <div id="y">Div with an id</div>
+    <input type="text" />
+    <input type="text" />
+    <input type="text" />
+  </body>
+  <script>
+    // using byTagName
+
+    // let h1 = document.getElementsByTagName("h1");
+    // let p = document.getElementsByTagName("p");
+    // let img = document.getElementsByTagName("img");
+    // let div = document.getElementsByTagName("div");
+    // let input = document.getElementsByTagName("input");
+
+    // console.log(h1)
+    // console.log(p)
+    // console.log(img)
+    // console.log(div)
+    // console.log(input)
+
+    // -----------------------------------------------------------
+
+    //using querySelector
+
+    // let h1 = document.querySelector("h1");
+    // let p = document.querySelector("p");
+    // let img = document.querySelector("img");
+    // let divClass = document.querySelector(".x")
+    // let divId = document.querySelector("#y")
+    // let input = document.querySelector("input");
+
+    // console.log(h1)
+    // console.log(p)
+    // console.log(img)
+    // console.log(divClass)
+    // console.log(divId)
+    // console.log(input)
+
+    // ----------------------------------------------------------
+
+    //forEach loop
+
+    let inputs = document.querySelectorAll("input");
+    let inputs2 = document.getElementsByTagName("input");
+
+    inputs.forEach((loops) => {
+      console.log(loops);
+    });
+
+    const loop2 = [...document.getElementsByTagName("input")];
+    loop2.forEach((child) => console.log(child));
+  </script>
+</html>
