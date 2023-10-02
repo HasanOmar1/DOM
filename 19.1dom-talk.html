@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>title 1</li>
+      <li class="start-here">title 2</li>
+      <li>
+        <ul>
+          <li>sub title 1</li>
+          <li>sub title 2</li>
+          <li>sub title 3</li>
+        </ul>
+      </li>
+      <li>title 3</li>
+    </ul>
+    <div>
+      <p>Hello World!</p>
+    </div>
+    <script>
+      let start = document.querySelector(".start-here");
+      start.innerText = "main title";
+      let title4 = document.createElement("li");
+      title4.innerText = "sub title 4";
+      let midUL = document.querySelector("ul ul");
+      midUL.appendChild(title4);
+      firstUL = document.querySelector("ul");
+      firstUL.removeChild(firstUL.lastElementChild);
+      let newTitle = (document.title = "Master Of The Dom");
+      let p = document.querySelector("p");
+      p.innerText = "Bye World";
+    </script>
+  </body>
+</html>
