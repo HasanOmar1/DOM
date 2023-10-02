@@ -34,7 +34,7 @@ const users = [
         //create new attribute
         const dataId = document.createAttribute("data-id")
         dataId.value = Math.floor(Math.random() * 1000)
-        li.setAttribute("data-id",Math.floor(Math.random() * 1000))
+        li.setAttribute("data-id", dataId.value)
         ol.append(li)
     })
 
