@@ -24,8 +24,12 @@
       body.appendChild(firstP);
       body.style.fontSize = "1.5rem";
       let secondP = document.createElement("p");
-      secondP.innerText = "GOOD LUCK ESCAPING MUHAHAHAAHA";
+      secondP.innerText = "GOOD LUCK ESCAPING";
       body.appendChild(secondP);
+      let laughInItalic = document.createElement("i");
+      laughInItalic.innerText = " MUHAHAHAHAH";
+      laughInItalic.style.color = "blue";
+      secondP.insertAdjacentElement("beforeend", laughInItalic);
     </script>
   </body>
 </html>
