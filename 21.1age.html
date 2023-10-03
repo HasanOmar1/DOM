@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1></h1>
+    <label>Age : </label>
+    <input type="text" /><br /><br />
+    <button>Submit</button>
+
+    <script>
+      const btn = document.querySelector("button");
+      const input = document.querySelector("input");
+      const h1 = document.querySelector("h1");
+
+      btn.addEventListener("click", function () {
+        if (input.value > 18) {
+          h1.innerText = "you can drink";
+        } else if (input.value < 18) {
+          h1.innerText = "you are too young to drink";
+        } else {
+          h1.innerText = "Only Numbers!";
+        }
+      });
+    </script>
+  </body>
+</html>
