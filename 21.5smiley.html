@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>How many smiles do you want to see????????</h3>
+    <h5></h5>
+    <input type="text" />
+    <button>submit</button>
+    <p></p>
+
+    <!-- 😊 -->
+
+    <script>
+      const input = document.querySelector("input");
+      const btn = document.querySelector("button");
+      const h5 = document.querySelector("h5");
+      const p = document.querySelector("p");
+
+      btn.addEventListener("click", () => {
+        let value = input.value;
+        p.innerText = "";
+        if (value.match(/^[0-9]+$/) != null) {
+          let number = parseInt(value);
+
+          for (let i = 0; i < number; i++) {
+            p.innerText += "😊";
+          }
+        } else {
+          h5.innerText = "Only Numbers!";
+        }
+      });
+    </script>
+  </body>
+</html>
