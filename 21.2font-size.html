@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Font size changer</title>
+  </head>
+  <body>
+    <button id="plus">+</button>
+    <button id="minus">-</button>
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis ex
+      dicta l audantium exercitationem corrupti illo accusamus , tempora
+      explicabo! Neque, voluptatem architecto consequuntur enim at cuma?
+    </p>
+
+    <script>
+      let p = document.querySelector("p");
+      let plus = document.querySelector("#plus");
+      let minus = document.querySelector("#minus");
+
+      let size = 16;
+
+      function sizeIncrease() {
+        if (size === 99) {
+          return;
+        }
+        size += 1;
+        p.style.fontSize = `${size}px`;
+        console.log(p.style.fontSize);
+      }
+
+      function sizeDecrease() {
+        if (size === 7) {
+          return;
+        }
+        size -= 1;
+        p.style.fontSize = `${size}px`;
+        console.log(p.style.fontSize);
+      }
+
+      plus.addEventListener("click", sizeIncrease);
+      minus.addEventListener("click", sizeDecrease);
+    </script>
+  </body>
+</html>
