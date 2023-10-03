@@ -6,7 +6,22 @@
     <title>Document</title>
   </head>
   <body>
-    <img id="off" src="./assets/lightbulb-off.jpg" alt="lightbulb-off" />
-    <img id="on" src="./assets/lightbulb-on.jpg" alt="lightbulb-on" />
+    <img id="off" src="./assets/lightbulb-off.png" alt="lightbulb-off" />
   </body>
+
+  <script>
+    let off = document.querySelector("#off");
+    let lamba = false;
+
+    off.addEventListener("click", function () {
+      if (lamba === false) {
+        off.src = "./assets/lightbulb-on.png";
+        lamba = !lamba;
+      } else {
+        off.src = "./assets/lightbulb-off.png";
+        lamba = !lamba;
+      }
+      console.log(lamba);
+    });
+  </script>
 </html>
