@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .all {
+        margin: 100px 500px;
+        font-size: 1.6rem;
+        width: 100%;
+      }
+      .mid {
+        margin-left: 400px;
+      }
+      #box {
+        margin-left: 480px;
+        width: 100px;
+        height: 100px;
+      }
+
+      .img {
+        background: url("./assets/look-at-me.jpg") no-repeat;
+        height: 400px;
+        background-size: 600px;
+        margin-left: 750px;
+        display: block;
+      }
+      #look {
+        margin-left: 450px;
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="all">
+      <h2>DO YOU WANT TO SEE A MAGIC TRICK????</h2>
+      <p class="mid">click on the square!</p>
+      <input id="box" type="checkbox" />
+      <p id="look"></p>
+    </div>
+    <div id="img"></div>
+
+    <script>
+      let box = document.querySelector("#box");
+      let look = document.querySelector("#look");
+      let img = document.querySelector("#img");
+
+      box.addEventListener("change", function () {
+        if (box.checked) {
+          img.classList.toggle("img");
+          look.style.display = "block";
+          look.innerText = "LOOK IN MY EYES";
+        } else if (!box.checked) {
+          look.style.display = "none";
+          img.classList.toggle("img");
+        }
+      });
+    </script>
+  </body>
+</html>
