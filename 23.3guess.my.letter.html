@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GUESSING GAME</title>
+    <style>
+      body {
+        background-color: darkgray;
+        margin: 200px 550px;
+        width: 900px;
+      }
+      h1 {
+        font-size: 3rem;
+        width: 30ch;
+      }
+
+      h3 {
+        font-size: 2rem;
+        margin-left: 200px;
+      }
+      #keys {
+        padding-top: 50px;
+      }
+
+      #p-right,
+      #right-answer {
+        color: green;
+        font-size: 40px;
+        margin-left: 150px;
+        display: none;
+      }
+      #p-wrong {
+        color: red;
+        font-size: 40px;
+        margin-left: 150px;
+        display: none;
+      }
+      #play-again {
+        font-size: 40px;
+        margin-left: 150px;
+        display: none;
+      }
+      #btn {
+        display: none;
+        font-size: 40px;
+        margin-left: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome To Guess My Letter</h1>
+    <h3>Guess a Key</h3>
+    <p id="right-answer"></p>
+    <p id="p-right"></p>
+    <p id="play-again"></p>
+    <form>
+      <input type="submit" id="btn" />
+    </form>
+    <p id="p-wrong"></p>
+    <h3 id="keys">Keys guessed</h3>
+    <p id="answer" style="font-size: 30px"></p>
+
+    <script>
+      let answers = document.querySelector("#answer");
+      let input = document.querySelector("#input");
+      let form = document.querySelector("form");
+      let pRight = document.querySelector("#p-right");
+      let pWrong = document.querySelector("#p-wrong");
+      let playAgain = document.querySelector("#play-again");
+      let rightAnswer = document.querySelector("#right-answer");
+      let btn = document.querySelector("#btn");
+
+      let random = randomChar();
+      console.log(random);
+
+      window.addEventListener("keypress", function (e) {
+        let keys = e.key;
+        let smallKeys = keys.toLowerCase();
+        if (smallKeys.match(/^[a-zA-Z]+$/) != null) {
+          answers.innerText += e.key + `,`;
+          if (smallKeys === random) {
+            pRight.style.display = "block";
+            pWrong.style.display = "none";
+            rightAnswer.style.display = "block";
+            pRight.innerText = `YOU ARE CORRECT`;
+            rightAnswer.innerText = `The guess was : ${random}`;
+            playAgain.innerText = `Would you like to play again?`;
+            btn.style.display = "block";
+            playAgain.style.display = "block";
+          }
+          if (smallKeys != random) {
+            pRight.style.display = "none";
+            rightAnswer.style.display = "none";
+            pWrong.style.display = "block";
+            pWrong.innerText = `NOPE TRY AGAIN`;
+            btn.style.display = "none";
+            playAgain.style.display = "none";
+          }
+        }
+      });
+
+      btn.addEventListener("submit", function () {});
+
+      function randomChar() {
+        const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const lowerCase = alphabet.toLowerCase();
+        const randomCharacter =
+          lowerCase[Math.floor(Math.random() * lowerCase.length)]; // generates random char
+        return randomCharacter;
+      }
+
+      //   function hasRepeatedLetters(str) {
+      //     var patt = /^([a-z])\1+$/;
+      //     var result = patt.test(str);
+      //     return result;
+      //   }
+
+      // let hasDuplicates = (/([a-z])\1/i).test(str)
+    </script>
+  </body>
+</html>
