@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .all {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      h3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .para {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: blanchedalmond;
+        margin: 0 400px;
+        height: 500px;
+        width: 500px ;
+      }
+
+      #confirmBtn,
+      #changeBtn {
+        display: none;
+        margin: 30px;
+      }
+
+      h1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+        <div class="all">
+      <label for="name">First Name : </label>
+      <input id="nameInput" type="text" />
+      <label for="age">Age : </label>
+      <input id="ageInput" type="number" />
+      <label for="email">Email : </label>
+      <input id="emailInput" type="email" />
+      <button>Submit</button>
+    </form>
+    <h3>Display Content</h3>
+    <div class="para">
+      <p id="displayName"></p>
+      <p id="displayAge"></p>
+      <p id="displayEmail"></p>
+      <div>
+        <button id="confirmBtn">Confirm</button>
+        <button id="changeBtn">Change information</button>
+        <p id="again"></p>
+      </div>
+    </div>
+    </div>
+    <h1 id="congratz"></h1>
+
+
+
+    <script>
+      let formData = {};
+
+      // Selecting Elements
+      let form = document.querySelector("form");
+
+      let nameInput = document.querySelector("#nameInput");
+      let ageInput = document.querySelector("#ageInput");
+      let emailInput = document.querySelector("#emailInput");
+      let confirmBtn = document.querySelector("#confirmBtn");
+      let changeBtn = document.querySelector("#changeBtn");
+      let displayH1 = document.querySelector("#congratz");
+      let div = document.querySelector(".all");
+      let againP = document.querySelector("#again");
+
+      //Event Listener
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        let name = nameInput.value;
+        let age = ageInput.value;
+        let email = emailInput.value;
+
+        //Data
+        formData.name = name;
+        formData.age = age;
+        formData.email = email;
+
+        displayFormData();
+
+        changeBtn.style.display = "block";
+        confirmBtn.style.display = "block";
+
+
+        confirmBtn.addEventListener("click", () => {
+            div.style.display = 'none'
+            displayH1.innerText = `Congratulations you successfully sent this form`;
+            
+        });
+
+        changeBtn.addEventListener("click", () => {
+            againP.innerText = 'Sure , go ahead and change what you want :P'
+        });
+      });
+
+      function displayFormData() {
+        let displayName = document.querySelector("#displayName");
+        let displayAge = document.querySelector("#displayAge");
+        let displayEmail = document.querySelector("#displayEmail");
+
+        displayName.innerText = "Name :" + formData.name;
+        displayAge.innerText = "Age :" + formData.age;
+        displayEmail.textContent = "Email :" + formData.email;
+      }
+    </script>
+  </body>
+</html>
