@@ -7,8 +7,10 @@
     <style>
       body {
         background-color: darkgray;
-        margin: 200px 550px;
-        width: 900px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
       }
       h1 {
         font-size: 3rem;
@@ -55,7 +57,7 @@
     <p id="p-right"></p>
     <p id="play-again"></p>
     <form>
-      <input type="submit" id="btn" />
+      <button id="btn">YES</button>
     </form>
     <p id="p-wrong"></p>
     <h3 id="keys">Keys guessed</h3>
@@ -63,7 +65,6 @@
 
     <script>
       let answers = document.querySelector("#answer");
-      let input = document.querySelector("#input");
       let form = document.querySelector("form");
       let pRight = document.querySelector("#p-right");
       let pWrong = document.querySelector("#p-wrong");
@@ -77,8 +78,10 @@
       window.addEventListener("keypress", function (e) {
         let keys = e.key;
         let smallKeys = keys.toLowerCase();
+
         if (smallKeys.match(/^[a-zA-Z]+$/) != null) {
           answers.innerText += e.key + `,`;
+
           if (smallKeys === random) {
             pRight.style.display = "block";
             pWrong.style.display = "none";
@@ -89,6 +92,7 @@
             btn.style.display = "block";
             playAgain.style.display = "block";
           }
+
           if (smallKeys != random) {
             pRight.style.display = "none";
             rightAnswer.style.display = "none";
@@ -109,14 +113,6 @@
           lowerCase[Math.floor(Math.random() * lowerCase.length)]; // generates random char
         return randomCharacter;
       }
-
-      //   function hasRepeatedLetters(str) {
-      //     var patt = /^([a-z])\1+$/;
-      //     var result = patt.test(str);
-      //     return result;
-      //   }
-
-      // let hasDuplicates = (/([a-z])\1/i).test(str)
     </script>
   </body>
 </html>
