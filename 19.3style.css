@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: gray;
+}
+
+.container{
+    margin: 300px 800px;
+}
+
+.copy{
+    
+    line-height: 2;
+
+}
+h1, h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputs{
+    width: 300px;
+    height: 150px;
+    background-color: saddlebrown;
+    border: 3px solid gold;
+}
+input{
+    width: 30px;
+    height: 30px;
+    margin-top: 30px;
+    margin-left: 14px;
+    font-size: 17px;
+    padding-left: 6px;
+    
+
+}
+button{
+display: flex;
+margin-top: 30px;
+padding: 10px 20px;
+justify-content: center;
+align-items: center;
+margin-left: 35%;
+background-color: darkmagenta;
+color:  aqua;
+border-radius: 10px;
+border: 1px solid;
+font-size: 20px;
+cursor: pointer;
+
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>verify</title>
+    <link rel="stylesheet" href="19.3style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="copy">
+        <h1>Text to copy:</h1>
+        <h2>ABC123</h2>
+      </div>
+      <form class="verify">
+        <div class="inputs">
+          <input type="text" name="n1" maxlength="1" autofocus />
+          <input type="text" name="n2" maxlength="1" />
+          <input type="text" name="n3" maxlength="1" />
+          <input type="text" name="n4" maxlength="1" />
+          <input type="text" name="n5" maxlength="1" />
+          <input type="text" name="n6" maxlength="1" />
+          <button>Verify</button>
+        </div>
+      </form>
+    </div>
+    <script>
+      let form = document.querySelector(".verify");
+      let inputs = form.querySelectorAll("input");
+
+      let handleInput = (e) => {
+        const input = e.target;
+        if (input.nextElementSibling && input.value) {
+          input.nextElementSibling.focus();
+        }
+      };
+
+      let handlePaste = (e) => {
+        const paste = e.clipboardData.getData("text");
+        inputs.forEach((input, index) => {
+          input.value = paste[index] || "";
+        });
+      };
+
+      inputs[0].addEventListener("paste", handlePaste);
+
+      form.addEventListener("input", handleInput);
+    </script>
+  </body>
+</html>
