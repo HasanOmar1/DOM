@@ -20,8 +20,8 @@
           <input type="text" name="n4" maxlength="1" />
           <input type="text" name="n5" maxlength="1" />
           <input type="text" name="n6" maxlength="1" />
-          <button>Verify</button>
         </div>
+        <button>Verify</button>
       </form>
     </div>
     <script>
@@ -33,16 +33,30 @@
         if (input.nextElementSibling && input.value) {
           input.nextElementSibling.focus();
         }
+        if (!input.nextElementSibling) {
+          location.reload();
+        }
       };
 
       let handlePaste = (e) => {
+        const input = e.target;
+
         const paste = e.clipboardData.getData("text");
         inputs.forEach((input, index) => {
           input.value = paste[index] || "";
         });
+
+        if (!inputs.nextElementSibling) {
+          location.reload();
+        }
       };
 
       inputs[0].addEventListener("paste", handlePaste);
+      inputs[1].addEventListener("paste", handlePaste);
+      inputs[2].addEventListener("paste", handlePaste);
+      inputs[3].addEventListener("paste", handlePaste);
+      inputs[4].addEventListener("paste", handlePaste);
+      inputs[5].addEventListener("paste", handlePaste);
 
       form.addEventListener("input", handleInput);
     </script>
