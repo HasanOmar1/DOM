@@ -112,3 +112,11 @@ button{
 select{
     padding: 10px;
 }
+
+.small{
+    width: 150px;
+}
+
+.big{
+    width: 247px;
+}
