@@ -270,7 +270,7 @@ let movieDataBase = {
     if(movie){
       return movie
     }
-    return `None of the titles includes the string : ${str}`
+    return;
   },
 }
 
@@ -293,7 +293,7 @@ movieDataBase.removeRating(`Fast 5`)
 movieDataBase.avgRating(`Batman`)
 movieDataBase.avgRating(`Fast 5`)
 
-// console.log(movieDataBase.searchMovie(`A`))
+console.log(movieDataBase.searchMovie(`A`))
 console.log(movieDataBase.movies)
 
 
