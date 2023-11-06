@@ -33,6 +33,7 @@ body{
 .info{
     margin-left: 12%;
     margin-top: 10%;
+
 }
 
 input , select{
@@ -51,7 +52,8 @@ input , select{
 }
 
 #general-info{
-    color: rgb(25, 137, 178)
+    color: rgb(25, 137, 178);
+
 }
 
 #contact{
