@@ -104,3 +104,11 @@ button{
 .gray{
     color: gray;
 }
+
+.space{
+    margin-right: 10px;
+}
+
+select{
+    padding: 10px;
+}
