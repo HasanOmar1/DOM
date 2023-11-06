@@ -244,14 +244,34 @@ let movieDataBase = {
       return movie
 
     },
+    
+    //this function is extra.
+    avgRating(title){
+      let movie = movieDataBase.movies.find(t => t.title === title)
+      if(movie){
+        let avgRate = movie.rating.reduce((total , curr) => {
+          return total + curr / movie.rating.length
+        } , 0)
+        let newAvg = movie.averageRating + avgRate
+        movie.averageRating = newAvg
+        return avgRate
+      
+        
+      }
+      return movie
+
+    },
 
   //Exercise 3: Searching Movies
   // 1. Add a method named  searchMovie  to  movieDatabase . This method should take a string as a parameter and
   // return an array of all movies whose title contains that string (ignoring case).
   searchMovie(str){
-    let movie = movieDataBase.movies.some(t => t.title.toLowerCase().includes(str.toLowerCase()))
-    return movie
-  }
+    let movie = movieDataBase.movies.filter(t => t.title.toLowerCase().includes(str.toLowerCase()))
+    if(movie){
+      return movie
+    }
+    return `None of the titles includes the string : ${str}`
+  },
 }
 
 movieDataBase.addMovie('Batman')
@@ -260,7 +280,7 @@ movieDataBase.addMovie('Fast 5')
 
 movieDataBase.removeMovie('Lord of The Rings')
 
-movieDataBase.addRating(`Batman` , 7)
+movieDataBase.addRating(`Batman` , 11)
 movieDataBase.addRating(`Batman` , 5)
 movieDataBase.addRating(`Fast 5` , 8)
 movieDataBase.addRating(`Fast 5` , 6)
@@ -269,10 +289,13 @@ movieDataBase.addRating(`Fast 5` , 2)
 movieDataBase.removeRating(`Batman`)
 movieDataBase.removeRating(`Fast 5`)
 
-console.log(movieDataBase.searchMovie(`FasT 5`))
+// avgRating function is extra
+movieDataBase.avgRating(`Batman`)
+movieDataBase.avgRating(`Fast 5`)
+
+// console.log(movieDataBase.searchMovie(`A`))
 console.log(movieDataBase.movies)
 
-// console.log(movieDataBase.movies)
 
 
 
