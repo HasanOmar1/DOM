@@ -98,12 +98,12 @@ let movies = [
     let card = document.createElement('div')
     let title = document.createElement('h2')
     let img = document.createElement('img')
+    let info = document.createElement(`div`)
     let genre = document.createElement('p')
     let director = document.createElement('p')
     let releaseYear = document.createElement('p')
     let rating = document.createElement('p')
     let votes = document.createElement('p')
-    let info = document.createElement(`div`)
 
     card.className = 'card'
     info.className = `info`
