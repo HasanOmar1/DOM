@@ -95,16 +95,16 @@ let movies = [
 
   function addMovieCard(id){
     
-    let body = document.querySelector('body')
-    let card = document.createElement('div')
-    let title = document.createElement('h2')
-    let img = document.createElement('img')
-    let info = document.createElement(`div`)
-    let genre = document.createElement('p')
-    let director = document.createElement('p')
-    let releaseYear = document.createElement('p')
-    let rating = document.createElement('p')
-    let votes = document.createElement('p')
+    const body = document.querySelector('body')
+    const card = document.createElement('div')
+    const title = document.createElement('h2')
+    const img = document.createElement('img')
+    const info = document.createElement(`div`)
+    const genre = document.createElement('p')
+    const director = document.createElement('p')
+    const releaseYear = document.createElement('p')
+    const rating = document.createElement('p')
+    const votes = document.createElement('p')
 
     card.className = 'card'
     info.className = `info`
