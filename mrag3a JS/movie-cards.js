@@ -133,8 +133,6 @@ let movies = [
 
   }
     
-  addMovie(0)
-  addMovie(1)
-  addMovie(2)
-  addMovie(3)
-  addMovie(4)
+  for(let i = 0 ; i < 5 ; i++){
+    addMovie(i)
+  }
