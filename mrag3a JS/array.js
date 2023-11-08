@@ -205,9 +205,19 @@ let movieDataBase = {
     addMovie(title){
         let obj = {};
         obj.title = title;
-        obj.rating = []
+        obj.ratings = []
         obj.averageRating = 0
-        movieDataBase.movies.push(obj)
+        this.movies.push(obj)
+
+        //or
+
+        // this.movies.push({
+        //   title:title, // or only title because title = title
+        //   ratings:[],
+        //   averageRating:0
+        // })
+
+        
     },
     
     removeMovie(title){
@@ -216,7 +226,11 @@ let movieDataBase = {
        let index = movieDataBase.movies.findIndex(t => t.title === title)
        movieDataBase.movies.splice(index , 1)
       }
-      return movie;
+      
+
+      //or
+
+      // this.movies = this.movies.filter(movie => movie.title !== title)
       
     },
 
@@ -231,26 +245,24 @@ let movieDataBase = {
     addRating(title , rating){
       let movie = movieDataBase.movies.find(t =>  t.title === title)
         if(movie){
-        movie.rating.push(rating)
+        movie.ratings.push(rating)
       }
-      return movie;
+      
     },
 
     removeRating(title , rating){
       let movie = movieDataBase.movies.find(t => t.title === title)
       if(movie){
-        movie.rating.pop(rating)
+        movie.ratings = movie.ratings.filter(r => r !== rating)
       }
-      return movie
-
     },
     
-    //this function is extra.
+    //this function is extra and is not completed [ not dynamic]
     avgRating(title){
       let movie = movieDataBase.movies.find(t => t.title === title)
       if(movie){
-        let avgRate = movie.rating.reduce((total , curr) => {
-          return total + curr / movie.rating.length
+        let avgRate = movie.ratings.reduce((total , curr) => {
+          return total + curr / movie.ratings.length
         } , 0)
         let newAvg = movie.averageRating + avgRate
         movie.averageRating = newAvg
@@ -261,6 +273,7 @@ let movieDataBase = {
       return movie
 
     },
+ 
 
   //Exercise 3: Searching Movies
   // 1. Add a method named  searchMovie  to  movieDatabase . This method should take a string as a parameter and
@@ -270,8 +283,16 @@ let movieDataBase = {
     if(movie){
       return movie
     }
-    return;
+   return;
+
+   // or
+
+  //  let lowerCase = str.toLowerCase()
+  //  return this.movies.filter(m => m.title.toLowerCase().includes(lowerCase))
   },
+
+ 
+
 }
 
 movieDataBase.addMovie('Batman')
@@ -286,15 +307,15 @@ movieDataBase.addRating(`Fast 5` , 8)
 movieDataBase.addRating(`Fast 5` , 6)
 movieDataBase.addRating(`Fast 5` , 2)
 
-movieDataBase.removeRating(`Batman`)
-movieDataBase.removeRating(`Fast 5`)
+movieDataBase.removeRating(`Batman` , 11)
+movieDataBase.removeRating(`Fast 5` , 6)
 
 // avgRating function is extra
 movieDataBase.avgRating(`Batman`)
 movieDataBase.avgRating(`Fast 5`)
 
 console.log(movieDataBase.searchMovie(`A`))
-console.log(movieDataBase.movies)
+// console.log(movieDataBase.movies)
 
 
 
