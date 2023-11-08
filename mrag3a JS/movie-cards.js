@@ -57,6 +57,8 @@ let movies = [
     },
   ];
 
+  sort()
+  
     let movieId = movies.map(i => i.id)
     let movieTitle = movies.map(t => t.title)
     let movieGenre = movies.map(g => g.genre)
@@ -66,9 +68,7 @@ let movies = [
     let movieVotes = movies.map(v => v.votes)
     let movieCover = movies.map(c => c.cover)
     let movieAlt = movies.map(a => a.alt)
-
-    
- 
+  
     
   function newCard(){
     body = document.querySelector('body')
@@ -111,8 +111,10 @@ let movies = [
     votes.innerText = `Votes: ${movieVotes[id]}`
     img.src = movieCover[id]
     img.alt = movieAlt[id]
+
+   
+
   }
-  
   
   const form = document.querySelector('form')
   const titleInput = document.querySelector('#title')
@@ -124,10 +126,23 @@ let movies = [
   const sourceInput = document.querySelector('#img-source')
   const altInput = document.querySelector('#img-alt')
   
+
+  function innerText(id){
+    title.innerText = movieTitle[id]
+    genre.innerText = `Genre : ${movieGenre[id]}`
+    director.innerText = `Director:  ${movieDirector[id]}`
+    releaseYear.innerText = `Release Year : ${movieReleaseYears[id]}`
+    rating.innerText = `Rating : ${movieRatings[id]}`
+    votes.innerText = `Votes: ${movieVotes[id]}`
+    img.src = movieCover[id]
+    img.alt = movieAlt[id]
+  }
   
+  //event listener
   form.addEventListener('submit' , e => {
     e.preventDefault()
     let obj = {}
+    obj.id = movies.length + 1
     obj.title = titleInput.value
     obj.genre = genreInput.value
     obj.director = directorInput.value
@@ -149,25 +164,41 @@ let movies = [
     
     newCard()
     
-    function id(id){
-    title.innerText = movieTitle[id]
-    genre.innerText = `Genre : ${movieGenre[id]}`
-    director.innerText = `Director:  ${movieDirector[id]}`
-    releaseYear.innerText = `Release Year : ${movieReleaseYears[id]}`
-    rating.innerText = `Rating : ${movieRatings[id]}`
-    votes.innerText = `Votes: ${movieVotes[id]}`
-    img.src = movieCover[id]
-    img.alt = movieAlt[id]
-  }
   for(let i = 0 ; i < movieTitle.length ; i++){
-    id(i)
+    innerText(i)
   }
-  
-    console.log(movies)
-    
   })
-  
   
   for(let i = 0 ; i < movieTitle.length ; i++){
     addMovieCard(i)
   }
+
+  
+  //sort
+  function sort(){
+    let sorted = movies.sort((a,b) => {
+      return b.releaseYear - a.releaseYear
+    })
+    return sorted
+  }
+  
+
+  //search bar
+//   let searchBar = document.querySelector('.bar')
+//   function searchMovie(str){
+
+//     searchBar.addEventListener('keydown' , e => {
+//       console.log(e.key)
+//       str = searchBar.value
+//       let movie = movies.filter(t => t.title.toLowerCase().includes(str.toLowerCase()))
+//       if(movie){
+//         if(e.key === movie.map(t => t.title)){
+
+//         }
+        
+//       }
+//     })
+//   }
+
+
+// console.log(searchMovie(`god`))
