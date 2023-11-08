@@ -92,9 +92,7 @@ let movies = [
 
 
 
-
-
-  function addMovie(id){
+  function addMovieCard(id){
     
     let body = document.querySelector('body')
     let card = document.createElement('div')
@@ -133,6 +131,6 @@ let movies = [
 
   }
     
-  for(let i = 0 ; i < 5 ; i++){
-    addMovie(i)
+  for(let i = 0 ; i < movieTitle.length ; i++){
+    addMovieCard(i)
   }
