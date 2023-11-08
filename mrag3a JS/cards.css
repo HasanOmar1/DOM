@@ -15,6 +15,7 @@ body{
     height: 600px;
     margin: auto;
     margin-top: 10%;
+    border-radius: 5%;
 }
 
 h2{
@@ -27,7 +28,7 @@ h2{
 }
 
 .info{
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     line-height: 3rem;
     padding-left: 5%;
 
@@ -36,12 +37,14 @@ h2{
 
 img{
     height: 250px;
-    padding-top: 6%;
-    padding-left: 18%;
+    margin-top: 6%;
+    margin-left: 18%;
+    border: 3px solid darkblue;
+    border-radius: 10px;
 }
 
 
 span{
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: green;
 }
