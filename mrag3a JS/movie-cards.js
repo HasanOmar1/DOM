@@ -68,11 +68,15 @@ let movies = [
     let votes = document.querySelector('#votes')
     let cover = document.querySelector('img')
 
-    title.innerText = movieTitle[0]
-    genre.innerText = movieGenre[0]
-    director.innerText = movieDirector[0]
-    releaseYear.innerText = movieReleaseYears[0]
-    rating.innerText = movieRatings[0]
-    votes.innerText = movieVotes[0]
-    cover.src = movieCover[0]
+
+    function changeMovie(id){
+    title.innerText = movieTitle[id]
+    genre.innerText = movieGenre[id]
+    director.innerText = movieDirector[id]
+    releaseYear.innerText = movieReleaseYears[id]
+    rating.innerText = movieRatings[id]
+    votes.innerText = movieVotes[id]
+    cover.src = movieCover[id]
+    }
   
+    changeMovie(0)
