@@ -57,6 +57,7 @@ let movies = [
     },
   ];
 
+    const movieId = movies.map(i => i.id)
     const movieTitle = movies.map(t => t.title)
     const movieGenre = movies.map(g => g.genre)
     const movieDirector = movies.map(d => d.director)
@@ -78,7 +79,7 @@ let movies = [
     
     
     // function changeMovie(id){
-      // title.innerText = movieTitle[id]
+    // title.innerText = movieTitle[id]
     // genre.innerText = movieGenre[id]
     // director.innerText = movieDirector[id]
     // releaseYear.innerText = movieReleaseYears[id]
@@ -131,6 +132,6 @@ let movies = [
 
   }
     
-  for(let i = 0 ; i < movieTitle.length ; i++){
+  for(let i = 0 ; i < movieId.length ; i++){
     addMovieCard(i)
   }
