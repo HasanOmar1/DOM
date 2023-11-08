@@ -7,17 +7,49 @@
     <link rel="stylesheet" href="cards.css" />
   </head>
   <body>
-    <!-- <div class="card">
-      <h2 class="title"></h2>
-      <img src="" />
-      <div class="info">
-        <p>Genre : <span id="genre"></span></p>
-        <p>Director : <span id="director"></span></p>
-        <p>Release Year : <span id="release-year"></span></p>
-        <p>Rating : <span id="rating"></span></p>
-        <p>Votes : <span id="votes"></span></p>
-      </div>
-    </div> -->
+    <div class="container">
+      <form id="userForm">
+        <div class="form-group">
+          <label for="Title">Title:</label>
+          <input id="title" type="text" required />
+        </div>
+        <div class="form-group">
+          <label for="Genre">Genre:</label>
+          <input id="genre" type="text" required />
+        </div>
+        <div class="form-group">
+          <label for="Director">Director:</label>
+          <input id="director" type="text" required />
+        </div>
+        <div class="form-group">
+          <label for="Release-year">Release Year:</label>
+          <input id="release" type="text" required />
+        </div>
+        <div class="form-group">
+          <label for="Rating">Rating:</label>
+          <input id="rating" type="text" required />
+        </div>
+        <div class="form-group">
+          <label for="Votes">Votes:</label>
+          <input id="votes" type="text" required />
+        </div>
+        <div class="form-group">
+          <label for="img-source">Movie Cover:</label>
+          <input
+            id="img-source"
+            placeholder="link to img"
+            type="text"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="img-alt">Img alt:</label>
+          <input id="img-alt" type="text" required />
+        </div>
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+
     <script src="movie-cards.js"></script>
   </body>
 </html>

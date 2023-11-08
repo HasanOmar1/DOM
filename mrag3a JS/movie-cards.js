@@ -57,69 +57,36 @@ let movies = [
     },
   ];
 
-    const movieId = movies.map(i => i.id)
-    const movieTitle = movies.map(t => t.title)
-    const movieGenre = movies.map(g => g.genre)
-    const movieDirector = movies.map(d => d.director)
-    const movieReleaseYears = movies.map(r => r.releaseYear)
-    const movieRatings = movies.map(r => r.rating)
-    const movieVotes = movies.map(v => v.votes)
-    const movieCover = movies.map(c => c.cover)
-    const movieAlt = movies.map(a => a.alt)
+    let movieId = movies.map(i => i.id)
+    let movieTitle = movies.map(t => t.title)
+    let movieGenre = movies.map(g => g.genre)
+    let movieDirector = movies.map(d => d.director)
+    let movieReleaseYears = movies.map(r => r.releaseYear)
+    let movieRatings = movies.map(r => r.rating)
+    let movieVotes = movies.map(v => v.votes)
+    let movieCover = movies.map(c => c.cover)
+    let movieAlt = movies.map(a => a.alt)
 
+    
  
-    // let title = document.querySelector('h2')
-    // let genre = document.querySelector('#genre')
-    // let director = document.querySelector('#director')
-    // let releaseYear = document.querySelector('#release-year')
-    // let rating = document.querySelector('#rating')
-    // let votes = document.querySelector('#votes')
-    // let cover = document.querySelector('img')
-
     
-    
-    // function changeMovie(id){
-    // title.innerText = movieTitle[id]
-    // genre.innerText = movieGenre[id]
-    // director.innerText = movieDirector[id]
-    // releaseYear.innerText = movieReleaseYears[id]
-    // rating.innerText = movieRatings[id]
-    // votes.innerText = movieVotes[id]
-    // cover.src = movieCover[id]
-    // cover.alt = movieAlt[id]
-    // }
-    // changeMovie(0)
-    
-
-
-
-  function addMovieCard(id){
-    
-    const body = document.querySelector('body')
-    const card = document.createElement('div')
-    const title = document.createElement('h2')
-    const img = document.createElement('img')
-    const info = document.createElement(`div`)
-    const genre = document.createElement('p')
-    const director = document.createElement('p')
-    const releaseYear = document.createElement('p')
-    const rating = document.createElement('p')
-    const votes = document.createElement('p')
+  function newCard(){
+    body = document.querySelector('body')
+    card = document.createElement('div')
+    title = document.createElement('h2')
+    img = document.createElement('img')
+    info = document.createElement(`div`)
+    genre = document.createElement('p')
+    director = document.createElement('p')
+    releaseYear = document.createElement('p')
+    rating = document.createElement('p')
+    votes = document.createElement('p')
 
     card.className = 'card'
     info.className = `info`
     title.className = 'title'
+
     
-    title.innerText = movieTitle[id]
-    genre.innerText = `Genre : ${movieGenre[id]}`
-    director.innerText = `Director:  ${movieDirector[id]}`
-    releaseYear.innerText = `Release Year : ${movieReleaseYears[id]}`
-    rating.innerText = `Rating : ${movieRatings[id]}`
-    votes.innerText = `Votes: ${movieVotes[id]}`
-    img.src = movieCover[id]
-    img.alt = movieAlt[id]
-
-
     body.appendChild(card)
     card.appendChild(title)
     card.appendChild(img)
@@ -129,9 +96,78 @@ let movies = [
     info.appendChild(releaseYear)
     info.appendChild(rating)
     info.appendChild(votes)
-
   }
+
+
+  function addMovieCard(id){
     
-  for(let i = 0 ; i < movieId.length ; i++){
+    newCard()
+
+    title.innerText = movieTitle[id]
+    genre.innerText = `Genre : ${movieGenre[id]}`
+    director.innerText = `Director:  ${movieDirector[id]}`
+    releaseYear.innerText = `Release Year : ${movieReleaseYears[id]}`
+    rating.innerText = `Rating : ${movieRatings[id]}`
+    votes.innerText = `Votes: ${movieVotes[id]}`
+    img.src = movieCover[id]
+    img.alt = movieAlt[id]
+  }
+  
+  
+  const form = document.querySelector('form')
+  const titleInput = document.querySelector('#title')
+  const genreInput = document.querySelector('#genre')
+  const directorInput = document.querySelector('#director')
+  const releaseInput = document.querySelector('#release')
+  const ratingInput = document.querySelector('#rating')
+  const votesInput = document.querySelector('#votes')
+  const sourceInput = document.querySelector('#img-source')
+  const altInput = document.querySelector('#img-alt')
+  
+  
+  form.addEventListener('submit' , e => {
+    e.preventDefault()
+    let obj = {}
+    obj.title = titleInput.value
+    obj.genre = genreInput.value
+    obj.director = directorInput.value
+    obj.releaseYear = releaseInput.value
+    obj.rating = ratingInput.value
+    obj.votes = votesInput.value
+    obj.cover = sourceInput.value
+    obj.alt = altInput.value
+    movies.push(obj)
+    
+    movieTitle = movies.map(t => t.title)
+    movieGenre = movies.map(g => g.genre)
+    movieDirector = movies.map(d => d.director)
+    movieReleaseYears = movies.map(r => r.releaseYear)
+    movieRatings = movies.map(r => r.rating)
+    movieVotes = movies.map(v => v.votes)
+    movieCover = movies.map(c => c.cover)
+    movieAlt = movies.map(a => a.alt)
+    
+    newCard()
+    
+    function id(id){
+    title.innerText = movieTitle[id]
+    genre.innerText = `Genre : ${movieGenre[id]}`
+    director.innerText = `Director:  ${movieDirector[id]}`
+    releaseYear.innerText = `Release Year : ${movieReleaseYears[id]}`
+    rating.innerText = `Rating : ${movieRatings[id]}`
+    votes.innerText = `Votes: ${movieVotes[id]}`
+    img.src = movieCover[id]
+    img.alt = movieAlt[id]
+  }
+  for(let i = 0 ; i < movieTitle.length ; i++){
+    id(i)
+  }
+  
+    console.log(movies)
+    
+  })
+  
+  
+  for(let i = 0 ; i < movieTitle.length ; i++){
     addMovieCard(i)
   }

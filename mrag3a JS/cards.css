@@ -7,6 +7,7 @@
 body{
     background-color: gray;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     
 
@@ -46,4 +47,35 @@ img{
     margin-left: 20%;
     box-shadow: 5px 5px 30px 10px  salmon;
     border-radius: 10px;
+}
+
+/* form */
+
+.container{
+    margin-left: 10%;
+    margin-top: 3%;
+   
+}
+
+label{
+    font-size: 2rem;
+}
+
+input{
+    padding: 5px 10px;
+
+}
+
+input[type=submit]{
+    padding: 10px;
+    color: green;
+    background-color: beige;
+    border: none;
+    margin-top: 2%;
+    margin-left: 7%;
+    cursor: pointer;
+}
+
+.form-group{
+    padding-bottom: 10px;
 }
