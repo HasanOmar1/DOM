@@ -185,18 +185,18 @@
 
       const sortByReleaseYear = document.querySelector("#sort-by-release-year");
       sortByReleaseYear.addEventListener("click", () => {
-        let sorted = movies.sort((a, b) => {
+        let sorted = movies.slice().sort((a, b) => {
           return b.releaseYear - a.releaseYear;
         });
-        showMovies(movies);
+        showMovies(sorted);
       });
 
       const sortByRating = document.querySelector("#sort-by-rating");
       sortByRating.addEventListener("click", () => {
-        let sorted = movies.sort((a, b) => {
+        let sorted = movies.slice().sort((a, b) => {
           return b.rating - a.rating;
         });
-        showMovies(movies);
+        showMovies(sorted);
       });
 
       const sortByTitle = document.querySelector("#sort-by-title");
