@@ -93,6 +93,10 @@ input[type=submit]{
 
 }
 
+input[type=submit]:hover{
+    background-color: antiquewhite;
+}
+
 .search-bar{
     margin-left: 30%;
     margin-top: 2%;
