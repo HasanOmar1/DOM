@@ -19,6 +19,7 @@ const myObj = {
     myObj.greet();
 
     //a. it will point to the global scope name because its an arrow function and not a regular function
+    // but there is no name in the global scope so it will print "Hello undefined"
     //b. to fix it just change the arrow func to regular.
 
 
