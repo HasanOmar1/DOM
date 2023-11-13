@@ -51,6 +51,6 @@ document.querySelector(".element").addEventListener(() => {
     console.log(this);
     });
 
-    //a. first of all , addEventListener takes 2 parameters , so this code will wont work.
+    //a. first of all , addEventListener takes 2 parameters , so this code wont work.
     //b. to fix the code i have to add a second parameter [type parameter] and then  it will work.
     //this keyword  refers to window keyword
