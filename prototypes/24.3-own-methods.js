@@ -37,10 +37,9 @@ console.log(containsT)
 
 Array.prototype.myReduce = function(callback){
     let a = 0;                            
-    for(let i = 0; i < this.length; i++){ 
-        callback(a = a+this[i])            
+    for(let i = 0; i < this.length; i++){
+        callback(a = a+this[i])
     }
-     
     return a;                          
 }
 
