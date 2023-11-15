@@ -13,10 +13,9 @@ Pokemon.prototype.callPokemon = function(){
 }
 
 Pokemon.prototype.attack = function(attackNumber){
-    for(let i = 0 ; i < this.attackList.length ; i++){
-        let attackType = this.attackList[attackNumber]
-        return `${this.name} used ${attackType}`
-    }
+    let attackType = this.attackList[attackNumber]
+    return `${this.name} used ${attackType}`
+    
 }
 
 console.log(pokemon1.callPokemon())
