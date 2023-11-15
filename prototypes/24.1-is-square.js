@@ -10,5 +10,4 @@ Square.prototype.isSquare = function(){
 }
 
 let square1 = new Square(4,4,4,4)
-square1.isSquare()
 console.log(square1.isSquare())
