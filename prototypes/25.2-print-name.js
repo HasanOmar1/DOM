@@ -1,12 +1,14 @@
 const obj = {
     name: "John",
     getName(){
-        let objName = this;
+        console.log(`My name is ${this.name}`)
 
-        setTimeout(function (){
-            console.log(`My name is : ${objName.name}`)
-        } , 1000)
     },
+    getDelayedName(){
+        setTimeout(function(){
+            this.getName() 
+        }.bind(this), 1000)
+    }
 }
 
-obj.getName()
+obj.getDelayedName()
