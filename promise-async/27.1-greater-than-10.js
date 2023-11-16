@@ -5,13 +5,13 @@ const greaterOrLess = (num) => {
     if(num > 10){
         resolve()
     }
-    if(num < 10){
+    else{
         reject()
     }
 })
 }
 
-greaterOrLess(15)
+greaterOrLess(10)
 .then(() => {
     console.log(`Greater than 10!`)
 })
