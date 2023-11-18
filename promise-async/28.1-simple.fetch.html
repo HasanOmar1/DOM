@@ -17,6 +17,9 @@
       button {
         padding: 30px;
       }
+      h3 {
+        color: white;
+      }
     </style>
   </head>
   <body>
@@ -33,6 +36,7 @@
     const fetchData = async () => {
       const response = await fetch(url);
       const result = await response.json();
+      console.log(result);
       h3.innerText = result.value;
     };
 
