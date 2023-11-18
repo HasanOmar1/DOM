@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fetch api</title>
+    <style>
+      body {
+        background-color: gray;
+      }
+      .cont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      button {
+        padding: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cont">
+      <button>Joke of the Day</button>
+      <h3 class="joke"></h3>
+    </div>
+  </body>
+  <script>
+    const btn = document.querySelector("button");
+    const h3 = document.querySelector(".joke");
+
+    const url = "https://api.chucknorris.io/jokes/random";
+    const fetchData = async () => {
+      const response = await fetch(url);
+      const result = await response.json();
+      h3.innerText = result.value;
+    };
+
+    btn.addEventListener("click", fetchData);
+  </script>
+</html>
