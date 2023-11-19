@@ -21,6 +21,13 @@ const sortArr = (arr) => {
 
 const newArr = [`Hello ` , `world` , `asd`]
 
+
 makeAllCaps(newArr)
-.then(upperArray => console.log(sortArr(upperArray)))
+.then(capArr => {
+    let big = capArr
+    return makeAllCaps(big)
+})
+.then( (arr) => {
+    console.log(sortArr(arr))
+})
 .catch(error => console.log(error))
