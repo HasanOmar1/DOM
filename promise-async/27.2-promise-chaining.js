@@ -27,7 +27,7 @@ makeAllCaps(newArr)
     let big = capArr
     return makeAllCaps(big)
 })
-.then( (arr) => {
+.then(arr => {
     console.log(sortArr(arr))
 })
 .catch(error => console.log(error))
