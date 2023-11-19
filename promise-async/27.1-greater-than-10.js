@@ -11,7 +11,7 @@ const greaterOrLess = (num) => {
 })
 }
 
-greaterOrLess(10)
+greaterOrLess(13)
 .then(() => {
     console.log(`Greater than 10!`)
 })
