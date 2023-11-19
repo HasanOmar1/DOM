@@ -5,12 +5,12 @@ const  makeAllCaps = (arr) => {
         for(let word of arr){
             if(typeof word === `string`){
                 array.push(word.toUpperCase())
-                resolve(array)
             }
             else{
                 reject('Only strings allowed!')
             }
         }
+        resolve(array)
     })
 
 }
