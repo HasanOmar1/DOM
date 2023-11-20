@@ -1,5 +1,3 @@
-
-
 const nameInput = document.querySelector('.username-value')
 const cardContainer = document.querySelector('.card')
 const form = document.querySelector('form')
@@ -24,13 +22,10 @@ console.log(err)
 }
 })
 
-
 const renderUser = (user) => {
     cardContainer.innerHTML = ''
     if(user){
-
-    
-    
+        
             const avatar = document.createElement('img')
             avatar.classList.add('avatar')
             avatar.src = user.avatar_url;
@@ -50,36 +45,7 @@ const renderUser = (user) => {
             h1.addEventListener('click' , () => {
                 window.location = user.url
             })
-            
-    
-        }
+       
     }
-    
+    }
 renderUser()
-
-
-// form.addEventListener('submit' , async (e) => {
-// e.preventDefault()
-// try{
-    
-//     const profile = {
-//         username : nameInput.value
-//     }
-//     console.log(profile)
-//     const response = await fetch(url + `/${username}` , {
-//         method: "POST" ,
-//         headers: {
-//             "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify(profile)
-//     })
-//     console.log(response.status)
-//     const result = await response.json();
-//     console.log(result)
-//     fetchedUser()
-
-// }catch(err){
-//     console.log(err)
-// }
-// })
-
