@@ -15,6 +15,7 @@ try{
     const response = await result.json()
     console.log(response)
     renderUser(response)
+    form.reset()
 
     
 }catch(err){
@@ -23,28 +24,27 @@ console.log(err)
 })
 
 const renderUser = (user) => {
-    cardContainer.innerHTML = ''
     if(user){
-        
+
+            const anchor = document.createElement('a')
+            anchor.target = '_blank'
+            anchor.href = user.html_url
+            cardContainer.appendChild(anchor)
+
+
             const avatar = document.createElement('img')
             avatar.classList.add('avatar')
             avatar.src = user.avatar_url;
-            cardContainer.appendChild(avatar)
+            anchor.appendChild(avatar)
     
             const h1 = document.createElement('h1')
             h1.innerText = `Username: ${user.login}`;
-            cardContainer.appendChild(h1)
+            anchor.appendChild(h1)
     
             const p = document.createElement('p')
             p.innerText = `Number of public repositories: ${user.public_repos}`
             cardContainer.appendChild(p)
-    
-            avatar.addEventListener('click' , () => {
-                window.location = user.url
-            })
-            h1.addEventListener('click' , () => {
-                window.location = user.url
-            })
+
        
     }
     }
