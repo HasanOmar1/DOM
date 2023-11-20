@@ -3,37 +3,32 @@
 const nameInput = document.querySelector('.username-value')
 const cardContainer = document.querySelector('.card')
 const form = document.querySelector('form')
-
-
-
-
 const url = `https://api.github.com/users`
 
-const fetchedUser = async () => {
-   try{
+form.addEventListener('submit', async (e)=>{
+e.preventDefault();
+try{
+    console.log(nameInput.value)
+    const result = await fetch(url + `/${nameInput.value}`)
+    console.log(result)
+    if(!result.ok){
+        throw new Error(`Failed to fetch data. Status ${result.status}`)
+    }
+    const response = await result.json()
+    console.log(response)
+    renderUser(response)
 
-        const result = await fetch(url)
-        console.log(result)
-        if(!result.ok){
-            throw new Error(`Failed to fetch data. Status ${result.status}`)
-        }
-        const response = await result.json()
-        console.log(response)
-        renderUser(response)
-
-        
-   }catch(err){
-    console.log(err)
-   }
-
+    
+}catch(err){
+console.log(err)
 }
-fetchedUser()
+})
 
 
 const renderUser = (user) => {
     cardContainer.innerHTML = ''
     if(user){
-        user.forEach(user => {
+
     
     
             const avatar = document.createElement('img')
@@ -57,34 +52,34 @@ const renderUser = (user) => {
             })
             
     
-        })
+        }
     }
-    }
+    
 renderUser()
 
 
-form.addEventListener('submit' , async (e) => {
-e.preventDefault()
-try{
+// form.addEventListener('submit' , async (e) => {
+// e.preventDefault()
+// try{
     
-    const profile = {
-        username : nameInput.value
-    }
-    
-    const response = await fetch(url + `/${username}` , {
-        method: "POST" ,
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(profile)
-    })
-    console.log(response.status)
-    const result = await response.json();
-    console.log(result)
-    fetchedUser()
+//     const profile = {
+//         username : nameInput.value
+//     }
+//     console.log(profile)
+//     const response = await fetch(url + `/${username}` , {
+//         method: "POST" ,
+//         headers: {
+//             "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify(profile)
+//     })
+//     console.log(response.status)
+//     const result = await response.json();
+//     console.log(result)
+//     fetchedUser()
 
-}catch(err){
-    console.log(err)
-}
-})
+// }catch(err){
+//     console.log(err)
+// }
+// })
 
