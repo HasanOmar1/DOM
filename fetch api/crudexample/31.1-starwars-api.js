@@ -23,7 +23,7 @@ async function starWars(){
             const fetchPlanet = await fetch(planetUrl)
             const planetsResults = await fetchPlanet.json()
             // console.log(planetsResults)        
-            let obj = {}
+            const obj = {}
             obj.name = info.name
             obj.height = info.height
             obj.hair = info.hair_color
